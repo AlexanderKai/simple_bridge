@@ -13,7 +13,7 @@ run(Bridge) ->
         Bridge2 = Bridge:set_response_data(body(Bridge)),
         Bridge2:build_response()
     catch E:C ->
-        error_logger:error_msg("~p:~p: ~p",[E, C, erlang:get_stacktrace()]),
+        error_logger:error_msg("~p:~p",[E, C]),
         exit("Error building response")
     end.
 
