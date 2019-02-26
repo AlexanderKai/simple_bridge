@@ -85,7 +85,7 @@ inner_make(Module, RequestData) ->
     try
         make_nocatch(Module, RequestData)
     catch Type : Error ->
-        error_logger:error_msg("Error in simple_bridge:make/2 - ~p - ~p~n~p", [Type, Error, erlang:get_stacktrace()]),
+        error_logger:error_msg("Error in simple_bridge:make/2 - ~p - ~p~n", [Type, Error]),
         erlang:Type(Error)
     end.
 
