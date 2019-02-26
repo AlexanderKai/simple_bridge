@@ -40,7 +40,7 @@ get_key(ReqKey) ->
         RequestCache = #request_cache{request = Req} = cowboy_request_server:get(ReqKey),
         {RequestCache, Req}
     catch E:T ->
-        error_logger:info_msg("~p:~p~n~p", [E, T, erlang:get_stacktrace()])
+        error_logger:info_msg("~p:~p~n", [E, T])
     end.
 
 put_key(ReqKey, NewRequestCache) ->
